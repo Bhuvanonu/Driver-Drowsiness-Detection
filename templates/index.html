@@ -1,0 +1,67 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Driver Drowsiness Detection</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🚗 Live Driver Drowsiness Detection</h1>
+      <div class="content">
+        <div class="video-container">
+          <img src="{{ url_for('video_feed') }}" id="video-feed" />
+        </div>
+        <div class="status-container">
+          <h2>Driver Status</h2>
+          <div class="status-box" id="status-box">
+            <p id="status-text">Status: Initializing...</p>
+            <p id="counter-text">Eyes Closed: No</p>
+            <p id="mouth-counter-text">Yawning: No</p>
+            <p id="head-status-text">Head Position: Normal</p>
+            <p id="head-direction-text">Head Direction: Normal</p>
+            <p id="total-text">Total Alerts: 0</p>
+          </div>
+          <div class="alert-box" id="alert-box">
+            <p id="alert-text"></p>
+          </div>
+          <div class="instructions">
+            <h3>Instructions:</h3>
+            <ul>
+              <li>✅ Sit in a well-lit area</li>
+              <li>✅ Face the camera directly</li>
+              <li>❌ Avoid covering your eyes</li>
+              <li>⚠️ System detects eye closure, head tilt, and head turns</li>
+              <li>
+                ⚠️ Alerts will sound for drowsiness or improper head position
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Drowsiness chart -->
+      <div
+        class="chart-container"
+        style="width: 100%; max-width: 600px; margin: 20px auto"
+      >
+        <canvas id="drowsinessChart"></canvas>
+      </div>
+    </div>
+
+    <audio
+      id="beep-sound"
+      src="{{ url_for('static', filename='beep.mp3') }}"
+      preload="auto"
+    ></audio>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- updated script -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

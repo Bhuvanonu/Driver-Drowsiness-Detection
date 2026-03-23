@@ -1,0 +1,140 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.video-container {
+  flex: 1;
+  min-width: 640px;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.status-container {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.status-box {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.status-box p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+#status-text,
+#head-status-text {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#status-text {
+  color: #27ae60;
+}
+
+#head-status-text {
+  color: #3498db;
+}
+
+.alert-box {
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+#alert-text {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+}
+
+.instructions {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.instructions h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.instructions ul {
+  padding-left: 20px;
+}
+
+.instructions li {
+  margin-bottom: 8px;
+}
+
+/* Alert states */
+.drowsy {
+  color: #e74c3c !important;
+  animation: alert 0.5s infinite alternate;
+}
+
+.alert-active {
+  display: block !important;
+  background-color: #e74c3c;
+  color: white;
+}
+
+@keyframes alert {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+  .video-container {
+    min-width: 100%;
+  }
+}
