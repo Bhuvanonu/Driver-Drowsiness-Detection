@@ -1,0 +1,8 @@
+ Werkzeug==2.0.3
+ flask==2.0.1
+ opencv-python==4.7.0.72
+ mediapipe==0.10.21
+ numpy>=1.21.2
+scipy>=1.9.2        # or pin to the newest you’ve tested, e.g. scipy==1.11.3
+ pygame-ce
+ playsound==1.2.2
